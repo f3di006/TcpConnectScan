@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetTools;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
@@ -34,22 +35,25 @@ namespace TcpConnectScan
         }
         static void Main(string[] args)
         {
-            
-            
-            Thread.Sleep(3000);
+            Console.WriteLine("\t\t\thttps://github.com/f3di006");
+            if (args.Length < 5) { usage();return ; }
             List<Task> tasks = new List<Task>();
             string ip = args[0];
-            IPAddress ipAddress = IPAddress.Parse(ip);
+           
             int port_start=Int16.Parse(args[1]);
             int port_stop= Int16.Parse(args[2]);
             int th = Int16.Parse(args[3]);
             connect_timeout = Int16.Parse(args[4]);
             semaphoreSlim = new SemaphoreSlim(th);
-            for (int i = port_start; i < port_stop; i++)
+            var range= IPAddressRange.Parse(ip);
+            foreach (var k in range)
             {
-                IPEndPoint e = new IPEndPoint(ipAddress, i);
-                Task t=connectp(i,e);
-                tasks.Add(t);
+                for (int i = port_start; i <= port_stop; i++)
+                {
+                    IPEndPoint e = new IPEndPoint(k, i);
+                    Task t = connectp(i,e);
+                    tasks.Add(t);
+                }
             }
             Task.WaitAll(tasks.ToArray());
             Console.WriteLine("Done");

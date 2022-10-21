@@ -4,7 +4,6 @@ C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\bin\Debug\netcoreapp3.
 C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\bin\Debug\netcoreapp3.1\TcpConnectScan.runtimeconfig.dev.json
 C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\bin\Debug\netcoreapp3.1\TcpConnectScan.dll
 C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\bin\Debug\netcoreapp3.1\TcpConnectScan.pdb
-C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\obj\Debug\netcoreapp3.1\TcpConnectScan.csproj.AssemblyReference.cache
 C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\obj\Debug\netcoreapp3.1\TcpConnectScan.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\obj\Debug\netcoreapp3.1\TcpConnectScan.AssemblyInfoInputs.cache
 C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\obj\Debug\netcoreapp3.1\TcpConnectScan.AssemblyInfo.cs
@@ -12,3 +11,5 @@ C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\obj\Debug\netcoreapp3.
 C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\obj\Debug\netcoreapp3.1\TcpConnectScan.dll
 C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\obj\Debug\netcoreapp3.1\TcpConnectScan.pdb
 C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\obj\Debug\netcoreapp3.1\TcpConnectScan.genruntimeconfig.cache
+C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\bin\Debug\netcoreapp3.1\IPAddressRange.dll
+C:\Users\admin\source\repos\TcpConnectScan\TcpConnectScan\obj\Debug\netcoreapp3.1\TcpConnectScan.csproj.CopyComplete
