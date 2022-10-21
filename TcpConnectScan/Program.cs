@@ -10,12 +10,13 @@ namespace TcpConnectScan
     class Program
     {
         static SemaphoreSlim semaphoreSlim;
+        static int connect_timeout;
         static async Task connectp(int port , IPEndPoint ipe)
         {
             await semaphoreSlim.WaitAsync();
             var s = new Socket(AddressFamily.InterNetwork,SocketType.Stream, ProtocolType.Tcp);
-            await s.ConnectAsync(ipe);
-            //await Task.Delay(5000);
+            s.ConnectAsync(ipe);
+            await Task.Delay(connect_timeout);
 
             if (s.Connected == true)
             {
@@ -26,17 +27,25 @@ namespace TcpConnectScan
             semaphoreSlim.Release();
             return;
         } 
+        static void usage()
+        {
+            Console.WriteLine("TcpConnectScan.exe ip_address port_start port_end nthreads connection_timeout(ms)"+Environment.NewLine+ "Example: TcpConnectScan.exe 10.1.1.1/24 1 500 10 50 ");
+            return;
+        }
         static void Main(string[] args)
         {
+            
+            
             Thread.Sleep(3000);
             List<Task> tasks = new List<Task>();
-            string ip = "192.168.1.1";
+            string ip = args[0];
             IPAddress ipAddress = IPAddress.Parse(ip);
-            int port_start=10;
-            int port_stop=3000;
-            int th = 10;
+            int port_start=Int16.Parse(args[1]);
+            int port_stop= Int16.Parse(args[2]);
+            int th = Int16.Parse(args[3]);
+            connect_timeout = Int16.Parse(args[4]);
             semaphoreSlim = new SemaphoreSlim(th);
-            for (int i = 0; i < 500; i++)
+            for (int i = port_start; i < port_stop; i++)
             {
                 IPEndPoint e = new IPEndPoint(ipAddress, i);
                 Task t=connectp(i,e);
